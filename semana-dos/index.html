@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Casino Online Monkey House</title>
+</head>
+<body>
+    <!-- HEADER CON MENÚ DE NAVEGACIÓN -->
+    <header>
+        <nav>
+            <!-- 1. LOGO DE LA PÁGINA -->
+            <a href="index.html" class="logo">
+                <img src="img/logo.webp" alt="Logo de Monkey House Casino">
+            </a>
+            
+            <!-- 2. BOTÓN HAMBURGUESA (solo visible en móvil) -->
+            <button class="menu-btn" aria-expanded="false" aria-controls="main-menu">
+                <span class="sr-only">Menú</span>
+                <div class="menu-btn__burger"></div>
+            </button>
+            
+            <!-- 3. MENÚ PRINCIPAL -->
+            <ul class="nav-list" id="main-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                 <a href="./pages/inciarsesion.html" class="nav-link">Iniciar Sesión</a>
+                </li>
+                <!-- En semana-dos/index.html, línea ~35 -->
+
+                <li class="nav-item">
+                    <a href="pages/categorias.html" class="nav-link">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/populares.html" class="nav-link">Populares</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/metodos-pago.html" class="nav-link">Medios de Carga</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/legales.html" class="nav-link">Legales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/soporte.html" class="nav-link">Ayuda y Soporte</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main_container">
+        <main>
+            <!-- TÍTULO PRINCIPAL -->
+            <h1 class="titulo_principal">¡Bienvenidos y buena fortuna!</h1>
+            
+            <!-- SECCIÓN DE CARDS HORIZONTALES -->
+            <section class="cards-section">
+                <h2 class="section-title">Juegos</h2>
+                <p class="section-subtitle">Los más jugados esta semana</p>
+                
+                <div class="cards-container">
+                    <!-- CARD 1 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="img/juego1.webp" alt="Tragamonedas Clásico" loading="lazy">
+                            <span class="card-badge">Nuevo</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Tragamonedas Clásico</h3>
+                            <p class="card-description">Jackpot de $50,000. Volatilidad media.</p>
+                            <div class="card-meta">
+                                <span class="card-rating">★ 4.5</span>
+                                <span class="card-players">1.2k jugando</span>
+                            </div>
+                            <a href="juegos/tragamonedas.html" class="card-button">Jugar Ahora</a>
+                        </div>
+                    </article>
+                    
+                    <!-- CARD 2 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="img/juego2.webp" alt="Blackjack VIP" loading="lazy">
+                            <span class="card-badge">VIP</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Blackjack VIP</h3>
+                            <p class="card-description">Mesa en vivo con crupier real. Apuesta mínima $10.</p>
+                            <div class="card-meta">
+                                <span class="card-rating">★ 4.8</span>
+                                <span class="card-players">850 jugando</span>
+                            </div>
+                            <a href="juegos/blackjack.html" class="card-button">Unirse a Mesa</a>
+                        </div>
+                    </article>
+                    
+                    <!-- CARD 3 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="img/juego3.webp" alt="Ruleta Europea" loading="lazy">
+                            <span class="card-badge">En Vivo</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Ruleta Europea</h3>
+                            <p class="card-description">Transmisión en tiempo real. Probabilidad 2.7%.</p>
+                            <div class="card-meta">
+                                <span class="card-rating">★ 4.7</span>
+                                <span class="card-players">950 jugando</span>
+                            </div>
+                            <a href="juegos/ruleta.html" class="card-button">Girar Ruleta</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- GALERÍA DE JUEGOS -->
+            <section class="games-gallery">
+                <div class="gallery-header">
+                    <h2 class="gallery-title">🎮 Catálogo de Juegos</h2>
+                    <p class="gallery-subtitle">Explora más de 500 juegos disponibles</p>
+                </div>
+                
+                <h2 class="titulo_de_galeria">Elegí lo que más te guste</h2>
+                
+                <!-- Filtros de categorías -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="slots">Tragamonedas</button>
+                    <button class="filter-btn" data-filter="table">Mesa</button>
+                    <button class="filter-btn" data-filter="live">En Vivo</button>
+                </div>
+                
+                <!-- Grid de juegos -->
+                <div class="games-grid">
+                    <!-- JUEGO 1 -->
+                    <article class="game-item" data-category="slots">
+                        <div class="game-image">
+                            <img src="img/games/fortune-tiger.webp" alt="Fortune Tiger Slot" loading="lazy">
+                            <span class="game-badge new">Nuevo</span>
+                            <button class="game-favorite" aria-label="Añadir a favoritos">❤️</button>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-name">Fortune Tiger</h3>
+                            <p class="game-provider">PG Soft • Slots</p>
+                            <div class="game-stats">
+                                <span class="game-rating">★★★★☆ 4.2</span>
+                                <span class="game-volatility">Alta</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="game-demo-btn" data-game="fortune-tiger">Demo</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- JUEGO 2 -->
+                    <article class="game-item" data-category="live">
+                        <div class="game-image">
+                            <img src="img/games/live-blackjack.webp" alt="Blackjack en Vivo" loading="lazy">
+                            <span class="game-badge live">● En Vivo</span>
+                            <button class="game-favorite" aria-label="Añadir a favoritos">🤍</button>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-name">Live Blackjack</h3>
+                            <p class="game-provider">Evolution • Mesa</p>
+                            <div class="game-stats">
+                                <span class="game-players">👥 24 jugadores</span>
+                                <span class="game-minbet">Min: $5</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="game-info-btn" data-game="blackjack">Demo</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- JUEGO 3 -->
+                    <article class="game-item" data-category="slots">
+                        <div class="game-image">
+                            <img src="img/games/gates-olympus.webp" alt="Gates of Olympus" loading="lazy">
+                            <span class="game-badge popular">Popular</span>
+                            <button class="game-favorite" aria-label="Añadir a favoritos">🤍</button>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-name">Gates of Olympus</h3>
+                            <p class="game-provider">Pragmatic Play • Slots</p>
+                            <div class="game-stats">
+                                <span class="game-rating">★★★★★ 4.8</span>
+                                <span class="game-volatility">Muy Alta</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="game-demo-btn" data-game="olympus">Demo</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- JUEGO 4 -->
+                    <article class="game-item" data-category="table">
+                        <div class="game-image">
+                            <img src="img/games/american-roulette.webp" alt="Ruleta Americana" loading="lazy">
+                            <span class="game-badge classic">Clásico</span>
+                            <button class="game-favorite" aria-label="Añadir a favoritos">🤍</button>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-name">Ruleta Americana</h3>
+                            <p class="game-provider">Ezugi • Mesa</p>
+                            <div class="game-stats">
+                                <span class="game-rating">★★★★☆ 4.3</span>
+                                <span class="game-rtp">RTP: 94.74%</span>
+                            </div>
+                            <div class="game-actions">
+                                <a href="games/american-roulette.html" class="game-play-btn">Girar</a>
+                                <button class="game-info-btn" data-game="roulette">Demo</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- JUEGO 5 -->
+                    <article class="game-item" data-category="slots">
+                        <div class="game-image">
+                            <img src="img/games/sweet-bonanza.webp" alt="Sweet Bonanza" loading="lazy">
+                            <span class="game-badge jackpot">Jackpot</span>
+                            <button class="game-favorite" aria-label="Añadir a favoritos">🤍</button>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-name">Sweet Bonanza</h3>
+                            <p class="game-provider">Pragmatic Play • Slots</p>
+                            <div class="game-stats">
+                                <span class="game-rating">★★★★★ 4.9</span>
+                                <span class="game-volatility">Media</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="game-demo-btn" data-game="bonanza">Demo</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- JUEGO 6 -->
+                    <article class="game-item" data-category="live">
+                        <div class="game-image">
+                            <img src="img/games/live-baccarat.webp" alt="Baccarat en Vivo" loading="lazy">
+                            <button class="game-favorite" aria-label="Añadir a favoritos">🤍</button>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-name">Live Baccarat</h3>
+                            <p class="game-provider">Playtech • Mesa VIP</p>
+                            <div class="game-stats">
+                                <span class="game-players">👥 12 jugadores</span>
+                                <span class="game-minbet">Min: $100</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="game-info-btn" data-game="baccarat">Demo</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Botón para cargar más juegos -->
+                <div class="gallery-footer">
+                    <!-- Espacio para futura implementación -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="simple-footer">
+        <!-- Redes Sociales -->
+        <div class="footer-social">
+            <h3>Nuestras Redes Sociales</h3>
+            <!-- En tu footer - VERSIÓN SIMPLE -->
+
+            <div class="redes-sociales">
+    <h3>Síguenos en:</h3>
+    
+    <div class="iconos-sociales">
+        <!-- Facebook -->
+        <a href="#" class="enlace-social">
+            <img src="img/facebook.webp" 
+                 alt="Facebook" 
+                 class="icono-social">
+        </a>
+        
+        <!-- Instagram -->
+        <a href="#" class="enlace-social">
+            <img src="img/insta.png" 
+                 alt="Instagram" 
+                 class="icono-social">
+        </a>
+        
+        <!-- Twitter -->
+        <a href="#" class="enlace-social">
+            <img src="img/twiter.webp" 
+                 alt="Twitter" 
+                 class="icono-social">
+        </a>
+    </div>
+</div>
+        </div>
+        
+        <!-- Chat con Cajero -->
+        <div class="footer-chat">
+            <h3>Soporte en Vivo</h3>
+            <button class="chat-cajero-btn" onclick="window.open('chat-cajero.html', '_blank')">
+                <img src="img/cajero.webp alt="Cajero">
+                <span>Chat con Cajero</span>
+                <small>Disponible 24/7</small>
+            </button>
+        </div>
+        
+        <!-- Enlaces rápidos -->
+        <div class="footer-links">
+            <a href="css/img/facebook.webp">Términos</a> •
+            <a href="privacidad.html">Privacidad</a> •
+            <a href="juego-responsable.html">Juego Responsable</a> •
+            <a href="contacto.html">Contacto</a>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copy">
+            <p>© 2024 Monkey House Casino - Todos los derechos reservados</p>
+            <p class="age-warning">+18 Años | Prohibido a menores de edad</p>
+        </div>
+    </footer>
+
+    <!-- Espacio reservado para futuros elementos -->
+    <div></div>
+</body>
+</html>

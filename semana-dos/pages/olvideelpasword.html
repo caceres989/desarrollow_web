@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/recuperarcuenta.css">
+    <title>Recuperar Contraseña - Casino Monkey House</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.webp" alt="Logo de Monkey House Casino">
+            </a>
+            
+            <button class="menu-btn" aria-expanded="false" aria-controls="main-menu">
+                <span class="sr-only">Menú</span>
+                <div class="menu-btn__burger"></div>
+            </button>
+            
+            <ul class="nav-list" id="main-menu">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">Home</a>
+             
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main_container">
+        <main class="recovery-page">
+            <!-- Encabezado -->
+            <div class="recovery-header">
+                <div class="recovery-icon">🔓</div>
+                <h1 class="titulo_principal">Recuperar Contraseña</h1>
+                <p class="recovery-subtitle">Te enviaremos un enlace para restablecer tu contraseña</p>
+            </div>
+            
+            <!-- Formulario simple -->
+            <div class="recovery-form-container">
+                <form class="recovery-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="recovery-email">
+                            <span class="label-icon">📧</span>
+                            Email registrado *
+                        </label>
+                        <input type="email" id="recovery-email" name="email" required 
+                               placeholder="ejemplo@email.com">
+                        <small class="form-hint">Ingresa el email con el que te registraste</small>
+                    </div>
+                    
+                    <!-- Métodos alternativos -->
+                    <div class="recovery-options">
+                        <p class="options-title">¿Problemas con el email?</p>
+                        
+                        <div class="alternative-option">
+                            <input type="radio" id="method-email" name="recovery-method" value="email" checked>
+                            <label for="method-email">
+                                <span class="option-icon">📧</span>
+                                <span class="option-text">
+                                    <strong>Recibir enlace por email</strong><br>
+                                    <small>Te enviaremos un enlace seguro a tu correo</small>
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div class="alternative-option">
+                            <input type="radio" id="method-sms" name="recovery-method" value="sms">
+                            <label for="method-sms">
+                                <span class="option-icon">📱</span>
+                                <span class="option-text">
+                                    <strong>Recibir código por SMS</strong><br>
+                                    <small>Ingresa tu número de teléfono registrado</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Campo para teléfono (oculto por defecto) -->
+                    <div class="form-group phone-field" style="display: none;">
+                        <label for="recovery-phone">
+                            <span class="label-icon">📱</span>
+                            Número de teléfono *
+                        </label>
+                        <input type="tel" id="recovery-phone" name="phone" 
+                               placeholder="Ej: 1122334455">
+                        <small class="form-hint">Formato: 10 dígitos sin espacios</small>
+                    </div>
+                    
+                    <!-- Instrucciones -->
+                    <div class="recovery-instructions">
+                        <h3>📋 ¿Qué sucede después?</h3>
+                        <ol class="instructions-list">
+                            <li>Recibirás un enlace o código de verificación</li>
+                            <li>Haz clic en el enlace o ingresa el código</li>
+                            <li>Crea una nueva contraseña segura</li>
+                            <li>Inicia sesión con tu nueva contraseña</li>
+                        </ol>
+                    </div>
+                    
+                    <!-- Botones -->
+                    <div class="form-actions">
+                        <a href="./iniciarsesion.html" class="btn btn-secondary">
+                            ↩️ Volver al Login
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            Enviar Enlace de Recuperación
+                        </button>
+                    </div>
+                    
+                    <!-- Mensaje de éxito (simulado) -->
+                    <div class="success-message" style="display: none;">
+                        <div class="success-icon">✅</div>
+                        <h3>¡Enlace enviado!</h3>
+                        <p>Revisa tu bandeja de entrada y sigue las instrucciones.</p>
+                        <p><strong>No olvides revisar la carpeta de SPAM.</strong></p>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Información de ayuda -->
+            <div class="help-info">
+                <h3>🆘 ¿Necesitas ayuda?</h3>
+                
+                <div class="help-grid">
+                    <div class="help-item">
+                        <div class="help-icon">❓</div>
+                        <h4>No recibí el email</h4>
+                        <p>Espera unos minutos y revisa tu carpeta de spam.</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <div class="help-icon">📧</div>
+                        <h4>Cambié de email</h4>
+                        <p>Contacta con nuestro soporte para actualizar tus datos.</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <div class="help-icon">🔒</div>
+                        <h4>Cuenta bloqueada</h4>
+                        <p>Espera 30 minutos o contacta con soporte inmediato.</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <div class="help-icon">📞</div>
+                        <h4>Soporte 24/7</h4>
+                        <p>Llama al <strong>1-800-MONKEY</strong> o usa el chat en vivo.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-support">
+                    <p><strong>Email de soporte:</strong> soporte@monkeycasino.com</p>
+                    <p><strong>Horario:</strong> Lunes a Viernes 9:00 - 18:00</p>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="simple-footer">
+        <div class="footer-social">
+            <h3>Nuestras Redes Sociales</h3>
+            <div class="redes-sociales">
+                <h3>Síguenos en:</h3>
+                <div class="iconos-sociales">
+                    <a href="#" class="enlace-social">
+                        <img src="./img/facebook.webp" alt="Facebook" class="icono-social">
+                    </a>
+                    <a href="#" class="enlace-social">
+                        <img src="./img/insta.png" alt="Instagram" class="icono-social">
+                    </a>
+                    <a href="#" class="enlace-social">
+                        <img src="./img/twiter.webp" alt="Twitter" class="icono-social">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-chat">
+            <h3>Soporte en Vivo</h3>
+            <button class="chat-cajero-btn" onclick="window.location.href='#'">
+                <span style="font-size: 1.5rem;">💬</span>
+                <span>Chat con Cajero</span>
+                <small>Disponible 24/7</small>
+            </button>
+        </div>
+        
+        <div class="footer-links">
+            <a href="#">Términos y Condiciones</a> •
+            <a href="#">Política de Privacidad</a> •
+            <a href="#">Juego Responsable</a> •
+            <a href="#">Contacto</a>
+        </div>
+        
+        <div class="footer-copy">
+            <p>© 2024 Monkey House Casino - Todos los derechos reservados</p>
+            <p class="age-warning">+18 Años | Prohibido a menores de edad | Juego responsable</p>
+        </div>
+    </footer>
+</body>
+</html>

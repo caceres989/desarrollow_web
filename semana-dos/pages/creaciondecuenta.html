@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS principal + específico para formularios -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/estiloscreaciondecuenta.css">
+    <title>Registro - Casino Monkey House</title>
+</head>
+<body>
+    <!-- HEADER IDÉNTICO AL INDEX -->
+    <header>
+        <nav>
+            <!-- Logo -->
+            <a href="./index.html" class="logo">
+                <img src="../img/logo.webp" alt="Logo de Monkey House Casino">
+            </a>
+            
+            <!-- Menú Hamburguesa -->
+            <button class="menu-btn" aria-expanded="false" aria-controls="main-menu">
+                <span class="sr-only">Menú</span>
+                <div class="menu-btn__burger"></div>
+            </button>
+            
+            <!-- Menú Principal -->
+            <ul class="nav-list" id="main-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./iniciarsesion.html" class="nav-link">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./inciarsesion.html" class="nav-link active">Registrarse</a>
+                </li>
+                <!-- Puedes agregar más opciones después -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main_container">
+        <main class="form-page">
+            <!-- Encabezado del formulario -->
+            <div class="form-header">
+                <h1 class="titulo_principal">Crear Cuenta</h1>
+                <p class="form-subtitle">Únete al casino más emocionante y gana premios increíbles</p>
+            </div>
+            
+            <!-- Formulario de registro -->
+            <form class="registro-form" id="formRegistro">
+                <!-- Sección 1: Datos Personales -->
+                <fieldset class="form-section">
+                    <legend>📝 Datos Personales</legend>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required 
+                                   placeholder="Ej: Juan Pérez" minlength="3">
+                            <small class="form-hint">Mínimo 3 caracteres</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fecha_nacimiento">Fecha de Nacimiento *</label>
+                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                            <small class="form-hint">Debes ser mayor de 18 años</small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dni">DNI o Documento *</label>
+                        <input type="text" id="dni" name="dni" required 
+                               placeholder="Ej: 12345678" pattern="[0-9]{8,10}">
+                        <small class="form-hint">8-10 números sin puntos ni espacios</small>
+                    </div>
+                </fieldset>
+                
+                <!-- Sección 2: Datos de Contacto -->
+                <fieldset class="form-section">
+                    <legend>📧 Datos de Contacto</legend>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required 
+                                   placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required 
+                                   placeholder="Ej: 1122334455" pattern="[0-9]{10,15}">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pais">País *</label>
+                        <select id="pais" name="pais" required>
+                            <option value="">Selecciona tu país</option>
+                            <option value="AR">Argentina</option>
+                            <option value="MX">México</option>
+                            <option value="ES">España</option>
+                            <option value="CO">Colombia</option>
+                            <option value="CL">Chile</option>
+                            <option value="PE">Perú</option>
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <!-- Sección 3: Seguridad -->
+                <fieldset class="form-section">
+                    <legend>🔐 Seguridad</legend>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="usuario">Nombre de Usuario *</label>
+                            <input type="text" id="usuario" name="usuario" required 
+                                   placeholder="Ej: jugador2024" minlength="4" maxlength="20">
+                            <small class="form-hint">4-20 caracteres, sin espacios</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Contraseña *</label>
+                            <input type="password" id="password" name="password" required 
+                                   placeholder="••••••••" minlength="8">
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                                <small class="strength-text">Seguridad: Baja</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm_password">Confirmar Contraseña *</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required 
+                               placeholder="••••••••">
+                        <small id="password-match" class="form-hint"></small>
+                    </div>
+                </fieldset>
+                
+                <!-- Sección 4: Términos y Condiciones -->
+                <fieldset class="form-section">
+                    <legend>📋 Términos y Condiciones</legend>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">
+                            Acepto los <a href="#" class="link">Términos y Condiciones</a> 
+                            y la <a href="#" class="link">Política de Privacidad</a> *
+                        </label>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="mayor_edad" name="mayor_edad" required>
+                        <label for="mayor_edad">
+                            Confirmo que soy mayor de 18 años *
+                        </label>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="promociones" name="promociones">
+                        <label for="promociones">
+                            Deseo recibir promociones y ofertas especiales por email
+                        </label>
+                    </div>
+                </fieldset>
+                
+                <!-- Botones de acción -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        🎰 Crear Cuenta y Comenzar a Jugar
+                    </button>
+                    
+                    <button type="reset" class="btn btn-secondary">
+                        🔄 Limpiar Formulario
+                    </button>
+                    
+                    <p class="form-footer">
+                        ¿Ya tienes cuenta? 
+                        <a href="./iniciarsesion.html" class="link">Inicia Sesión aquí</a>
+                    </p>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- FOOTER (igual al index) -->
+    <footer class="simple-footer">
+        <div class="footer-social">
+            <h3>Nuestras Redes Sociales</h3>
+            <div class="redes-sociales">
+                <h3>Síguenos en:</h3>
+                <div class="iconos-sociales">
+                    <a href="#" class="enlace-social">
+                        <img src="./img/facebook.webp" alt="Facebook" class="icono-social">
+                    </a>
+                    <a href="#" class="enlace-social">
+                        <img src="./img/insta.png" alt="Instagram" class="icono-social">
+                    </a>
+                    <a href="#" class="enlace-social">
+                        <img src="./img/twiter.webp" alt="Twitter" class="icono-social">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-copy">
+            <p>© 2024 Monkey House Casino - Todos los derechos reservados</p>
+            <p class="age-warning">+18 Años | Prohibido a menores de edad | Juego responsable</p>
+        </div>
+    </footer>

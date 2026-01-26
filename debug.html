@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug de Rutas</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .section { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .test-btn { padding: 10px 20px; background: #0a2e36; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        .success { color: green; }
+        .error { color: red; }
+        code { background: #e9ecef; padding: 2px 6px; border-radius: 3px; }
+        pre { background: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 5px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>🐛 Debug de Rutas - Casino Monkey House</h1>
+    
+    <div class="section">
+        <h2>📊 Información del Sistema</h2>
+        <p><strong>URL Completa:</strong> <span id="fullUrl"></span></p>
+        <p><strong>Protocolo:</strong> <span id="protocol"></span></p>
+        <p><strong>Host:</strong> <span id="host"></span></p>
+        <p><strong>Pathname:</strong> <span id="pathname"></span></p>
+        <p><strong>Carpeta Actual:</strong> <span id="currentFolder"></span></p>
+    </div>
+    
+    <div class="section">
+        <h2>🔍 Verificación de Archivos</h2>
+        <button class="test-btn" onclick="checkFile('index.html')">Verificar index.html (raíz)</button>
+        <button class="test-btn" onclick="checkFile('pages/iniciarsesion.html')">Verificar pages/iniciarsesion.html</button>
+        <button class="test-btn" onclick="checkFile('pages/index.html')">Verificar pages/index.html</button>
+        <button class="test-btn" onclick="checkFile('css/main.css')">Verificar css/main.css</button>
+        <div id="fileResults"></div>
+    </div>
+    
+    <div class="section">
+        <h2>🧪 Pruebas de Enlaces</h2>
+        <h3>Prueba estos enlaces:</h3>
+        <p><a href="pages/iniciarsesion.html" target="_blank">1. pages/iniciarsesion.html</a></p>
+        <p><a href="./pages/iniciarsesion.html" target="_blank">2. ./pages/iniciarsesion.html</a></p>
+        <p><a href="/semana-dos/pages/iniciarsesion.html" target="_blank">3. /semana-dos/pages/iniciarsesion.html</a></p>
+        <p><a href="../semana-dos/pages/iniciarsesion.html" target="_blank">4. ../semana-dos/pages/iniciarsesion.html</a></p>
+        
+        <h3>¿Qué sucede al hacer clic?</h3>
+        <p id="clickResult">Haz clic en un enlace y describe lo que pasa</p>
+    </div>
+    
+    <div class="section">
+        <h2>📁 Explorador de Archivos (Simulado)</h2>
+        <button class="test-btn" onclick="exploreFolder()">Explorar estructura</button>
+        <div id="folderStructure"></div>
+    </div>
+    
+    <div class="section">
+        <h2>🔧 Soluciones a Intentar</h2>
+        <h3>Opción A: Enlace con JavaScript forzado</h3>
+        <pre>
+&lt;li class="nav-item"&gt;
+    &lt;a href="#" onclick="window.location.href='pages/iniciarsesion.html'; return false;" 
+       class="nav-link"&gt;
+       Iniciar Sesión
+    &lt;/a&gt;
+&lt;/li&gt;</pre>
+        
+        <h3>Opción B: Enlace absoluto (para Live Server)</h3>
+        <pre>
+&lt;li class="nav-item"&gt;
+    &lt;a href="/pages/iniciarsesion.html" class="nav-link"&gt;Iniciar Sesión&lt;/a&gt;
+&lt;/li&gt;</pre>
+        
+        <h3>Opción C: Verificar permisos de archivos</h3>
+        <p>Los archivos .html deben tener permisos de lectura (644 en Linux/Mac)</p>
+    </div>
+
+    <script>
+        // Mostrar información del sistema
+        document.getElementById('fullUrl').textContent = window.location.href;
+        document.getElementById('protocol').textContent = window.location.protocol;
+        document.getElementById('host').textContent = window.location.host;
+        document.getElementById('pathname').textContent = window.location.pathname;
+        document.getElementById('currentFolder').textContent = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        
+        // Función para verificar archivos
+        async function checkFile(filePath) {
+            const results = document.getElementById('fileResults');
+            results.innerHTML = `<p>🔍 Verificando: <code>${filePath}</code>...</p>`;
+            
+            try {
+                const response = await fetch(filePath);
+                
+                if (response.ok) {
+                    results.innerHTML += `<p class="success">✅ <code>${filePath}</code> - EXISTE (Status: ${response.status})</p>`;
+                    
+                    // Si es un HTML, verificar su contenido
+                    if (filePath.endsWith('.html')) {
+                        const text = await response.text();
+                        results.innerHTML += `<details style="margin-top: 10px;">
+                            <summary>Ver contenido (primeras 500 caracteres)</summary>
+                            <pre style="background: #f8f9fa; padding: 10px; border-radius: 3px; margin-top: 5px;">
+${text.substring(0, 500)}${text.length > 500 ? '...' : ''}</pre>
+                        </details>`;
+                    }
+                } else {
+                    results.innerHTML += `<p class="error">❌ <code>${filePath}</code> - NO EXISTE (Status: ${response.status})</p>`;
+                }
+            } catch (error) {
+                results.innerHTML += `<p class="error">❌ <code>${filePath}</code> - ERROR: ${error.message}</p>`;
+            }
+        }
+        
+        // Función para explorar estructura
+        async function exploreFolder() {
+            const structure = document.getElementById('folderStructure');
+            structure.innerHTML = '<p>🔍 Explorando estructura...</p>';
+            
+            // Intentar acceder a diferentes niveles
+            const folders = [
+                '',
+                'pages/',
+                'css/',
+                'img/'
+            ];
+            
+            let html = '<h4>Estructura encontrada:</h4><pre>';
+            
+            for (let folder of folders) {
+                try {
+                    const response = await fetch(folder || '.');
+                    if (response.ok) {
+                        html += `${folder || '.'}/\n`;
+                        // No podemos listar archivos desde JS por seguridad, pero podemos intentar archivos conocidos
+                    }
+                } catch (error) {
+                    html += `${folder || '.'}/ - Error: ${error.message}\n`;
+                }
+            }
+            
+            html += '</pre>';
+            structure.innerHTML = html;
+        }
+        
+        // Verificar automáticamente los archivos principales
+        setTimeout(() => {
+            checkFile('pages/iniciarsesion.html');
+        }, 1000);
+        
+        // Log para consola
+        console.log('=== DEBUG INFORMATION ===');
+        console.log('Full URL:', window.location.href);
+        console.log('Pathname:', window.location.pathname);
+        console.log('Trying to access: pages/iniciarsesion.html');
+        
+        // Intentar acceder al archivo
+        fetch('pages/iniciarsesion.html')
+            .then(r => {
+                console.log('Fetch result:', r.status, r.statusText);
+                if (!r.ok) {
+                    console.log('Alternative attempts:');
+                    
+                    // Probar rutas alternativas
+                    const alternatives = [
+                        './pages/iniciarsesion.html',
+                        '/pages/iniciarsesion.html',
+                        '/semana-dos/pages/iniciarsesion.html',
+                        'iniciarsesion.html'
+                    ];
+                    
+                    alternatives.forEach(alt => {
+                        fetch(alt)
+                            .then(r2 => console.log(`  ${alt}:`, r2.status))
+                            .catch(e2 => console.log(`  ${alt}:`, 'Error'));
+                    });
+                }
+            })
+            .catch(e => console.log('Fetch error:', e.message));
+    </script>
+</body>
+</html>
