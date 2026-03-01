@@ -3,87 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS principal + específico para login -->
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/estilosInicioSesion.css"> <!-- ¡CORREGIDO! -->
-    <title>Iniciar Sesión - Casino Monkey House</title>
+    
+    <title>Iniciar Sesión - Monkey House Casino</title>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <!-- ... tu header igual ... -->
+    <!-- HEADER (mismo que index) -->
+    <header class="bg-dark-blue border-bottom border-warning sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-2">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo.webp" alt="Logo Monkey House Casino" height="60" class="logo-gold">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover active" href="inciarsesion.html">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="categorias.html">Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="populares.html">Populares</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="metodos-pago.html">Medios de Carga</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="legales.html">Legales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="soporte.html">Ayuda y Soporte</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="main_container">
-        <div class="login-container"> <!-- Añade este contenedor -->
-            <div class="login-header">
-                <a href="../index.html" class="login-logo-link">
-                    <img src="../img/logo.webp" alt="Logo">
-                </a>
-                <h1>Iniciar Sesión</h1>
+    <!-- CONTENIDO PRINCIPAL - FORMULARIO DE LOGIN -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="bg-dark-blue p-4 p-md-5 rounded-4 border border-gold">
+                    <!-- Logo pequeño -->
+                    <a href="../index.html" class="d-block text-center mb-4">
+                        <img src="../img/logo.webp" alt="Monkey House" height="70" class="logo-gold">
+                    </a>
+                    
+                    <h1 class="text-gold text-center h2 mb-4">Bienvenido de vuelta</h1>
+                    <p class="text-white-50 text-center mb-5">Ingresá a tu cuenta para continuar</p>
+                    
+                    <form>
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label for="email" class="form-label">
+                                <i class="me-2">📧</i> Email
+                            </label>
+                            <input type="email" class="form-control" id="email" 
+                                   placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        
+                        <!-- Contraseña -->
+                        <div class="mb-4">
+                            <label for="password" class="form-label">
+                                <i class="me-2">🔒</i> Contraseña
+                            </label>
+                            <input type="password" class="form-control" id="password" 
+                                   placeholder="••••••••" required>
+                        </div>
+                        
+                        <!-- Recordar y olvidé contraseña -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="remember">
+                                <label class="form-check-label" for="remember">
+                                    Recordarme
+                                </label>
+                            </div>
+                            <a href="#" class="text-gold text-decoration-none hover-gold">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+                        </div>
+                        
+                        <!-- Botón de envío -->
+                        <button type="submit" class="btn btn-gold w-100 py-3 mb-4 fs-5">
+                            <span class="me-2">→</span> Iniciar Sesión
+                        </button>
+                        
+                        <!-- Link a registro -->
+                        <p class="text-center text-white-50 mb-0">
+                            ¿No tenés cuenta? 
+                            <a href="#" class="text-gold text-decoration-none hover-gold fw-bold">
+                                Registrate aquí
+                            </a>
+                        </p>
+                    </form>
+                </div>
             </div>
-            
-            <!-- Formulario de login -->
-            <form class="login-form">
-                <div class="form-group">
-                    <label for="email">ID o Usuario</label>
-                    <input type="text" id="email" placeholder="Ingresa tu ID o email" required>
-                </div>
-            
-                <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
-                </div>
-
-                <!-- Opción "Recordarme" -->
-                <div class="remember-me">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Recordar mi usuario</label>
-                </div>
-
-                <!-- BOTÓN ÚNICO (elimina el otro) -->
-                <div class="button_enviar">
-                    <button type="submit" class="btn-login with-icon">
-                        <span class="login-icon"></span>
-                        <span>Iniciar Sesión</span>
-                    </button>
-                </div>
-
-                <div class="forgot-password-link">
-                    <a href="./olvideelpasword.html">¿Olvidaste tu contraseña?</a>
-                </div>
-                
-                <div class="register-link">
-                    ¿No tienes cuenta? 
-                    <a href="./creaciondecuenta.html">Regístrate aquí</a>
-                </div>
-
-                <!-- Login social -->
-                <div class="social-login">
-                    <p class="social-divider">Iniciar sesión con:</p>
-                    
-                    <div class="social-buttons">
-                        <!-- Facebook -->
-                    
-                        
-                        <!-- Google -->
-                        <a href="#" class="social-btn google">
-                            <span class="social-icon">G</span>
-                            <span class="social-text">Continuar con Google</span>
-                        </a>
-                        
-                   
-                   
-                    </div>
-                </div>
-            </form>
-        </div> <!-- Cierra login-container -->
+        </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="simple-footer">
-        <!-- ... tu footer igual ... -->
-    </footer>
-</body>
-</html>
+    <!-- FOOTER (m

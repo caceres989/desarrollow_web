@@ -3,211 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS principal + específico para formularios -->
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="../css/estiloscreaciondecuenta.css">
-    <title>Registro - Casino Monkey House</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <title>Recuperar Contraseña - Monkey House Casino</title>
 </head>
 <body>
-    <!-- HEADER IDÉNTICO AL INDEX -->
-    <header>
-        <nav>
-            <!-- Logo -->
-            <a href="./index.html" class="logo">
-                <img src="../img/logo.webp" alt="Logo de Monkey House Casino">
-            </a>
-            
-            <!-- Menú Hamburguesa -->
-            <button class="menu-btn" aria-expanded="false" aria-controls="main-menu">
-                <span class="sr-only">Menú</span>
-                <div class="menu-btn__burger"></div>
-            </button>
-            
-            <!-- Menú Principal -->
-            <ul class="nav-list" id="main-menu">
-                <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./iniciarsesion.html" class="nav-link">Iniciar Sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./inciarsesion.html" class="nav-link active">Registrarse</a>
-                </li>
-                <!-- Puedes agregar más opciones después -->
-            </ul>
+    <!-- HEADER (igual que index) -->
+    <header class="bg-dark-blue border-bottom border-warning sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-2">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo.webp" alt="Logo Monkey House Casino" height="60" class="logo-gold">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="inciarsesion.html">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="crearcuenta.html">Crear Cuenta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="categorias.html">Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="populares.html">Populares</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="metodos-pago.html">Medios de Carga</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="legales.html">Legales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white nav-hover" href="soporte.html">Ayuda y Soporte</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <div class="main_container">
-        <main class="form-page">
-            <!-- Encabezado del formulario -->
-            <div class="form-header">
-                <h1 class="titulo_principal">Crear Cuenta</h1>
-                <p class="form-subtitle">Únete al casino más emocionante y gana premios increíbles</p>
+    <!-- CONTENIDO PRINCIPAL - RECUPERAR CONTRASEÑA -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="bg-dark-blue p-4 p-md-5 rounded-4 border border-gold">
+                    <!-- Logo pequeño -->
+                    <a href="../index.html" class="d-block text-center mb-4">
+                        <img src="../img/logo.webp" alt="Monkey House" height="70" class="logo-gold">
+                    </a>
+                    
+                    <h1 class="text-gold text-center h2 mb-2">¿Olvidaste tu contraseña?</h1>
+                    <p class="text-white-50 text-center mb-5">No te preocupes, te ayudamos a recuperarla</p>
+                    
+                    <!-- PASO 1: INGRESAR EMAIL -->
+                    <div id="paso1">
+                        <div class="text-center mb-4">
+                            <span class="badge bg-gold text-dark p-3 rounded-circle fs-4">1</span>
+                            <h3 class="text-white mt-2 h5">Ingresá tu email</h3>
+                        </div>
+                        
+                        <form id="formPaso1">
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email registrado</label>
+                                <input type="email" class="form-control" id="email" 
+                                       placeholder="tucorreo@ejemplo.com" required>
+                                <small class="text-white-50">Te enviaremos un código de verificación</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-gold w-100 py-3 mb-3" onclick="mostrarPaso2(event)">
+                                Enviar código
+                            </button>
+                            
+                            <a href="inciarsesion.html" class="btn btn-outline-secondary w-100 py-3">
+                                Volver al login
+                            </a>
+                        </form>
+                    </div>
+                    
+                    <!-- PASO 2: INGRESAR CÓDIGO (oculto inicialmente) -->
+                    <div id="paso2" style="display: none;">
+                        <div class="text-center mb-4">
+                            <span class="badge bg-gold text-dark p-3 rounded-circle fs-4">2</span>
+                            <h3 class="text-white mt-2 h5">Código de verificación</h3>
+                        </div>
+                        
+                        <form id="formPaso2">
+                            <div class="mb-4">
+                                <label for="codigo" class="form-label">Ingresá el código</label>
+                                <input type="text" class="form-control text-center fs-3" id="codigo" 
+                                       placeholder="123456" maxlength="6" required>
+                                <small class="text-white-50">Revisá tu email (puede estar en spam)</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-gold w-100 py-3 mb-3" onclick="mostrarPaso3(event)">
+                                Verificar código
+                            </button>
+                            
+                            <button type="button" class="btn btn-link text-gold w-100" onclick="reenviarCodigo()">
+                                Reenviar código
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- PASO 3: NUEVA CONTRASEÑA (oculto inicialmente) -->
+                    <div id="paso3" style="display: none;">
+                        <div class="text-center mb-4">
+                            <span class="badge bg-gold text-dark p-3 rounded-circle fs-4">3</span>
+                            <h3 class="text-white mt-2 h5">Nueva contraseña</h3>
+                        </div>
+                        
+                        <form id="formPaso3">
+                            <div class="mb-3">
+                                <label for="new_password" class="form-label">Nueva contraseña</label>
+                                <input type="password" class="form-control" id="new_password" 
+                                       placeholder="••••••••" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="confirm_password" class="form-label">Confirmar contraseña</label>
+                                <input type="password" class="form-control" id="confirm_password" 
+                                       placeholder="••••••••" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-gold w-100 py-3 mb-3" onclick="cambiarPassword(event)">
+                                Cambiar contraseña
+                            </button>
+                            
+                            <a href="inciarsesion.html" class="btn btn-outline-secondary w-100 py-3">
+                                Volver al login
+                            </a>
+                        </form>
+                    </div>
+                    
+                    <!-- MENSAJE DE ÉXITO (oculto inicialmente) -->
+                    <div id="exito" style="display: none;" class="text-center">
+                        <div class="bg-success bg-opacity-25 rounded-4 p-4">
+                            <span class="display-1">✓</span>
+                            <h3 class="text-white mt-3">¡Contraseña actualizada!</h3>
+                            <p class="text-white-50 mb-4">Tu contraseña se cambió correctamente</p>
+                            <a href="inciarsesion.html" class="btn btn-gold px-5 py-3">
+                                Iniciar sesión
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (igual que index) -->
+    <footer class="bg-dark-blue border-top border-warning mt-5 py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4 text-center">
+                    <h3 class="text-gold h5 mb-3">Nuestras Redes Sociales</h3>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="social-link">
+                            <img src="../img/facebook.webp" alt="Facebook" class="social-icon" width="40" height="40">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="../img/insta.png" alt="Instagram" class="social-icon" width="40" height="40">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="../img/twiter.webp" alt="Twitter" class="social-icon" width="40" height="40">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 text-center">
+                    <h3 class="text-gold h5 mb-3">Soporte en Vivo</h3>
+                    <button class="btn btn-success px-4 py-3" onclick="window.open('chat-cajero.html', '_blank')">
+                        <img src="../img/cajero.webp" alt="Cajero" width="30" height="30" class="rounded-circle me-2">
+                        <span class="fw-bold">Chat con Cajero</span>
+                        <small class="d-block">Disponible 24/7</small>
+                    </button>
+                </div>
+                
+                <div class="col-12 col-md-4 text-center">
+                    <h3 class="text-gold h5 mb-3">Enlaces</h3>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <a href="terminos.html" class="text-white-50 text-decoration-none footer-link">Términos</a>
+                        <span class="text-white-50">•</span>
+                        <a href="privacidad.html" class="text-white-50 text-decoration-none footer-link">Privacidad</a>
+                        <span class="text-white-50">•</span>
+                        <a href="juego-responsable.html" class="text-white-50 text-decoration-none footer-link">Juego Responsable</a>
+                        <span class="text-white-50">•</span>
+                        <a href="contacto.html" class="text-white-50 text-decoration-none footer-link">Contacto</a>
+                    </div>
+                </div>
             </div>
             
-            <!-- Formulario de registro -->
-            <form class="registro-form" id="formRegistro">
-                <!-- Sección 1: Datos Personales -->
-                <fieldset class="form-section">
-                    <legend>📝 Datos Personales</legend>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo *</label>
-                            <input type="text" id="nombre" name="nombre" required 
-                                   placeholder="Ej: Juan Pérez" minlength="3">
-                            <small class="form-hint">Mínimo 3 caracteres</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="fecha_nacimiento">Fecha de Nacimiento *</label>
-                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-                            <small class="form-hint">Debes ser mayor de 18 años</small>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="dni">DNI o Documento *</label>
-                        <input type="text" id="dni" name="dni" required 
-                               placeholder="Ej: 12345678" pattern="[0-9]{8,10}">
-                        <small class="form-hint">8-10 números sin puntos ni espacios</small>
-                    </div>
-                </fieldset>
-                
-                <!-- Sección 2: Datos de Contacto -->
-                <fieldset class="form-section">
-                    <legend>📧 Datos de Contacto</legend>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required 
-                                   placeholder="tu@email.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required 
-                                   placeholder="Ej: 1122334455" pattern="[0-9]{10,15}">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pais">País *</label>
-                        <select id="pais" name="pais" required>
-                            <option value="">Selecciona tu país</option>
-                            <option value="AR">Argentina</option>
-                            <option value="MX">México</option>
-                            <option value="ES">España</option>
-                            <option value="CO">Colombia</option>
-                            <option value="CL">Chile</option>
-                            <option value="PE">Perú</option>
-                        </select>
-                    </div>
-                </fieldset>
-                
-                <!-- Sección 3: Seguridad -->
-                <fieldset class="form-section">
-                    <legend>🔐 Seguridad</legend>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="usuario">Nombre de Usuario *</label>
-                            <input type="text" id="usuario" name="usuario" required 
-                                   placeholder="Ej: jugador2024" minlength="4" maxlength="20">
-                            <small class="form-hint">4-20 caracteres, sin espacios</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="password">Contraseña *</label>
-                            <input type="password" id="password" name="password" required 
-                                   placeholder="••••••••" minlength="8">
-                            <div class="password-strength">
-                                <div class="strength-bar"></div>
-                                <small class="strength-text">Seguridad: Baja</small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="confirm_password">Confirmar Contraseña *</label>
-                        <input type="password" id="confirm_password" name="confirm_password" required 
-                               placeholder="••••••••">
-                        <small id="password-match" class="form-hint"></small>
-                    </div>
-                </fieldset>
-                
-                <!-- Sección 4: Términos y Condiciones -->
-                <fieldset class="form-section">
-                    <legend>📋 Términos y Condiciones</legend>
-                    
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="terminos" name="terminos" required>
-                        <label for="terminos">
-                            Acepto los <a href="#" class="link">Términos y Condiciones</a> 
-                            y la <a href="#" class="link">Política de Privacidad</a> *
-                        </label>
-                    </div>
-                    
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="mayor_edad" name="mayor_edad" required>
-                        <label for="mayor_edad">
-                            Confirmo que soy mayor de 18 años *
-                        </label>
-                    </div>
-                    
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="promociones" name="promociones">
-                        <label for="promociones">
-                            Deseo recibir promociones y ofertas especiales por email
-                        </label>
-                    </div>
-                </fieldset>
-                
-                <!-- Botones de acción -->
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">
-                        🎰 Crear Cuenta y Comenzar a Jugar
-                    </button>
-                    
-                    <button type="reset" class="btn btn-secondary">
-                        🔄 Limpiar Formulario
-                    </button>
-                    
-                    <p class="form-footer">
-                        ¿Ya tienes cuenta? 
-                        <a href="./iniciarsesion.html" class="link">Inicia Sesión aquí</a>
-                    </p>
-                </div>
-            </form>
-        </main>
-    </div>
-
-    <!-- FOOTER (igual al index) -->
-    <footer class="simple-footer">
-        <div class="footer-social">
-            <h3>Nuestras Redes Sociales</h3>
-            <div class="redes-sociales">
-                <h3>Síguenos en:</h3>
-                <div class="iconos-sociales">
-                    <a href="#" class="enlace-social">
-                        <img src="./img/facebook.webp" alt="Facebook" class="icono-social">
-                    </a>
-                    <a href="#" class="enlace-social">
-                        <img src="./img/insta.png" alt="Instagram" class="icono-social">
-                    </a>
-                    <a href="#" class="enlace-social">
-                        <img src="./img/twiter.webp" alt="Twitter" class="icono-social">
-                    </a>
-                </div>
+            <div class="text-center mt-5 pt-4 border-top border-secondary">
+                <p class="text-white-50 mb-2">© 2024 Monkey House Casino - Todos los derechos reservados</p>
+                <p class="text-danger fw-bold mb-0">+18 Años | Prohibido a menores de edad</p>
             </div>
         </div>
-        
-        <div class="footer-copy">
-            <p>© 2024 Monkey House Casino - Todos los derechos reservados</p>
-            <p class="age-warning">+18 Años | Prohibido a menores de edad | Juego responsable</p>
-        </div>
     </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

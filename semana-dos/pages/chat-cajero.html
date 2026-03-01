@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <title>Chat con Cajero - Monkey House Casino</title>
+</head>
+<body>
+    <!-- HEADER simplificado -->
+    <header class="bg-dark-blue border-bottom border-warning sticky-top">
+        <nav class="navbar navbar-dark container py-2">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo.webp" alt="Logo Monkey House Casino" height="50" class="logo-gold">
+                </a>
+                <a href="../index.html" class="btn btn-outline-gold">Volver al inicio</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL - CHAT -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Columna del chat -->
+            <div class="col-12 col-lg-8 mx-auto">
+                <div class="bg-dark-blue rounded-4 border border-gold overflow-hidden">
+                    <!-- Header del chat -->
+                    <div class="bg-gold bg-opacity-25 p-3 border-bottom border-gold">
+                        <div class="d-flex align-items-center">
+                            <img src="../img/cajero.webp" alt="Cajero" width="50" height="50" class="rounded-circle border border-gold me-3">
+                            <div>
+                                <h2 class="h5 text-gold mb-0">Chat con Cajero</h2>
+                                <p class="text-white-50 small mb-0">
+                                    <span class="live-badge">● En línea</span> • Responde en minutos
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Área de mensajes -->
+                    <div class="p-4" style="height: 400px; overflow-y: auto; background: rgba(0,0,0,0.2);">
+                        <!-- Mensaje del sistema -->
+                        <div class="text-center mb-4">
+                            <span class="badge bg-secondary">Hoy</span>
+                        </div>
+                        
+                        <!-- Mensaje del cajero -->
+                        <div class="d-flex mb-4">
+                            <img src="../img/cajero.webp" alt="Cajero" width="35" height="35" class="rounded-circle me-2">
+                            <div class="bg-dark p-3 rounded-4" style="max-width: 70%;">
+                                <p class="small mb-1 text-gold">Cajero</p>
+                                <p class="mb-0 text-white">¡Hola! Soy el cajero virtual. ¿En qué puedo ayudarte hoy?</p>
+                                <small class="text-white-50">10:30 AM</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje del usuario -->
+                        <div class="d-flex justify-content-end mb-4">
+                            <div class="bg-gold bg-opacity-25 p-3 rounded-4" style="max-width: 70%;">
+                                <p class="mb-0 text-white">Hola, necesito ayuda con un depósito</p>
+                                <small class="text-white-50">10:32 AM</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje del cajero -->
+                        <div class="d-flex mb-4">
+                            <img src="../img/cajero.webp" alt="Cajero" width="35" height="35" class="rounded-circle me-2">
+                            <div class="bg-dark p-3 rounded-4" style="max-width: 70%;">
+                                <p class="small mb-1 text-gold">Cajero</p>
+                                <p class="mb-0 text-white">Claro, te ayudo con eso. ¿Qué método de pago querés usar?</p>
+                                <small class="text-white-50">10:33 AM</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Indicador de escribiendo -->
+                        <div class="d-flex">
+                            <img src="../img/cajero.webp" alt="Cajero" width="35" height="35" class="rounded-circle me-2">
+                            <div class="bg-dark p-3 rounded-4">
+                                <div class="typing-indicator">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Área de escribir mensaje -->
+                    <div class="p-3 border-top border-gold">
+                        <form class="d-flex gap-2">
+                            <input type="text" class="form-control" placeholder="Escribí tu mensaje..." aria-label="Mensaje">
+                            <button type="submit" class="btn btn-gold">
+                                <span>Enviar</span> ➔
+                            </button>
+                        </form>
+                        <p class="text-white-50 small mt-2 mb-0">
+                            <i class="me-1">⏰</i> Tiempo estimado de respuesta: 2-5 minutos
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Opciones rápidas -->
+                <div class="row g-3 mt-4">
+                    <div class="col-6 col-md-3">
+                        <button class="btn btn-outline-gold w-100 py-3" onclick="enviarMensajeRapido('Depósito')">
+                            💰 Depósito
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <button class="btn btn-outline-gold w-100 py-3" onclick="enviarMensajeRapido('Retiro')">
+                            💸 Retiro
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <button class="btn btn-outline-gold w-100 py-3" onclick="enviarMensajeRapido('Problema técnico')">
+                            🔧 Problema técnico
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <button class="btn btn-outline-gold w-100 py-3" onclick="enviarMensajeRapido('Bonos')">
+                            🎁 Bonos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script simple -->
+    <script>
+        function enviarMensajeRapido(tema) {
+            alert(`Simulación: Mensaje sobre "${tema}" enviado al cajero`);
+        }
+    </script>
+
+    <!-- Estilos adicionales para el chat -->
+    <style>
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+        }
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #c9a227;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+           30% { opacity: 1; transform: translateY(-5px); }}
+           </style>
