@@ -1,0 +1,353 @@
+/* ===========================================
+   CARGA DE FICHAS - ESTILOS ESPECÍFICOS
+   =========================================== */
+
+/* Títulos de sección */
+.seccion-titulo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #c9a227 !important;
+    position: relative;
+    padding-bottom: 0.75rem;
+    display: inline-block;
+}
+
+.seccion-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #c9a227, transparent);
+}
+
+.seccion-titulo i {
+    margin-right: 0.75rem;
+}
+
+/* Cards de montos */
+.monto-card {
+    background: linear-gradient(145deg, #1a2b3c, #0d1926);
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 12px;
+    padding: 1.25rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.monto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(201, 162, 39, 0.4);
+    border-color: #c9a227;
+}
+
+.monto-card.selected {
+    border-color: #c9a227;
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+    background: linear-gradient(145deg, #2a3a4a, #1a2a3a);
+}
+
+.monto-card .cantidad {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c9a227;
+    margin-bottom: 0.5rem;
+}
+
+.monto-card .fichas {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.monto-card .bonus-badge {
+    display: inline-block;
+    background: rgba(201, 162, 39, 0.2);
+    border: 1px solid #c9a227;
+    border-radius: 20px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    color: #c9a227;
+    margin-top: 0.5rem;
+}
+
+/* Monto personalizado */
+.monto-personalizado-container {
+    margin: 2rem 0;
+}
+
+.monto-personalizado-container .form-label {
+    color: #c9a227 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.input-group-custom {
+    display: flex;
+    align-items: center;
+    background: rgba(15, 25, 40, 0.8);
+    border: 2px solid rgba(201, 162, 39, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.input-group-custom:focus-within {
+    border-color: #c9a227;
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+    background: rgba(25, 35, 50, 0.95);
+}
+
+.input-group-text-custom {
+    background: linear-gradient(45deg, #c9a227, #e6b800);
+    color: #000;
+    font-weight: bold;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+}
+
+.input-group-custom input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group-custom input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group-custom input[type=number]::-webkit-inner-spin-button,
+.input-group-custom input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-group-custom input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.monto-minimo {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.monto-minimo i {
+    margin-right: 0.25rem;
+}
+
+/* Métodos de pago */
+.metodo-card {
+    background: rgba(15, 25, 40, 0.6);
+    border: 2px solid rgba(201, 162, 39, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.metodo-card:hover {
+    transform: translateY(-5px);
+    border-color: #c9a227;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(30, 45, 60, 0.8);
+}
+
+.metodo-card.active {
+    border-color: #c9a227;
+    background: linear-gradient(145deg, #2a3a4a, #1a2a3a);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+}
+
+.metodo-card i {
+    color: #c9a227;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.metodo-card h5 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.metodo-card small {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+}
+
+/* Resumen de carga */
+.resumen-carga {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.75rem 0;
+}
+
+.resumen-item:first-child {
+    padding-top: 0;
+}
+
+.resumen-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+
+.resumen-valor {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c9a227;
+    font-family: monospace;
+}
+
+/* Modal */
+.modal-content.bg-card {
+    background: linear-gradient(145deg, #1a2b3c, #0d1926) !important;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 16px;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    color: #c9a227;
+    font-weight: 600;
+}
+
+.modal-title i {
+    margin-right: 0.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+}
+
+.info-pago {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.info-pago p {
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.info-pago strong {
+    color: #c9a227;
+}
+
+.qr-container {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    display: inline-block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.qr-container canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-confirmar {
+    background: linear-gradient(45deg, #c9a227, #e6b800);
+    color: #000;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-confirmar:hover {
+    background: linear-gradient(45deg, #e6b800, #c9a227);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(201, 162, 39, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .seccion-titulo {
+        font-size: 1.25rem;
+    }
+    
+    .monto-card {
+        padding: 1rem 0.5rem;
+    }
+    
+    .monto-card .cantidad {
+        font-size: 1.2rem;
+    }
+    
+    .monto-card .fichas {
+        font-size: 0.7rem;
+    }
+    
+    .metodo-card {
+        padding: 1rem;
+    }
+    
+    .metodo-card i {
+        font-size: 2rem;
+    }
+    
+    .metodo-card h5 {
+        font-size: 0.85rem;
+    }
+    
+    .resumen-valor {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .monto-card .cantidad {
+        font-size: 1rem;
+    }
+    
+    .input-group-text-custom {
+        padding: 0.6rem 1rem;
+    }
+    
+    .resumen-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}

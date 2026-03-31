@@ -1,0 +1,38 @@
+.btn-base {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-gold {
+    background-color: $gold;
+    color: $dark-blue;
+    border: none;
+    padding: 10px 20px;
+    
+    &:hover {
+        background-color: darken($gold, 10%);
+        transform: translateY(-2px);
+    }
+}
+
+.btn-outline-gold {
+    background-color: transparent;
+    border: 2px solid $gold;
+    color: $gold;
+    padding: 8px 16px;
+    
+    &:hover {
+        background-color: $gold;
+        color: $dark-blue;
+        transform: translateY(-2px);
+    }
+}
+
+.transition-hover {
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-3px);
+    }
+}

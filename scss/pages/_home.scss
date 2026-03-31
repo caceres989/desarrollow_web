@@ -1,0 +1,48 @@
+// Estilos específicos del home
+.titulo-principal {
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    
+    @include mobile {
+        font-size: 1.8rem;
+    }
+    
+    @include tablet {
+        font-size: 2.2rem;
+    }
+}
+
+.text-gold {
+    color: $gold;
+}
+
+.text-white-50 {
+    color: $white-50;
+}
+
+.bg-card {
+    background-color: $card-bg;
+}
+
+.border-gold {
+    border: 1px solid rgba($gold, 0.3);
+}
+
+// Media queries para ajustes generales
+@include mobile {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .btn-outline-gold {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+@include tablet {
+    .titulo-principal {
+        font-size: 2.2rem;
+    }
+}

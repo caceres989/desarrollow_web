@@ -1,0 +1,29 @@
+// ===========================================
+// ABSTRACTS (variables, mixins)
+// ===========================================
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// ===========================================
+// BASE (reset, tipografía)
+// ===========================================
+@import "base/reset";
+@import "base/typography";
+
+// ===========================================
+// COMPONENTS
+// ===========================================
+@import "components/buttons";
+@import "components/cards";
+
+// ===========================================
+// LAYOUT (header y footer)
+// ===========================================
+@import "layout/header";
+@import "layout/footer";
+
+// ===========================================
+// PAGES
+// ===========================================
+@import "pages/home";
+@import "pages/carga-fichas";

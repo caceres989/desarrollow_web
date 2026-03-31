@@ -1,0 +1,177 @@
+// ============================================
+// ESTILOS PARA PÁGINA DE MEDIOS DE CARGA
+// ============================================
+
+// Hero / Banner
+.hero-carga {
+    background: linear-gradient(135deg, #1a1f2e 0%, #0a0c12 100%);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ffd700;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+// Cards de métodos de pago
+.payment-methods {
+    .payment-card {
+        background-color: #14161f;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .payment-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+        
+        .payment-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .payment-info {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .payment-badge {
+            display: inline-block;
+            background-color: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-top: 0.75rem;
+        }
+    }
+}
+
+// Sección de depósito
+.deposit-section {
+    background-color: #14161f;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 3rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    
+    .section-title {
+        color: #ffd700;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+    
+    .amount-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        
+        .amount-btn {
+            background-color: #0a0c12;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            
+            &:hover, &.active {
+                background-color: #ffd700;
+                color: #0a0c12;
+                border-color: #ffd700;
+            }
+        }
+    }
+    
+    .custom-amount {
+        input {
+            background-color: #0a0c12;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #ffffff;
+            padding: 0.75rem;
+            border-radius: 8px;
+            width: 100%;
+            
+            &:focus {
+                outline: none;
+                border-color: #ffd700;
+            }
+        }
+    }
+    
+    .deposit-btn {
+        background-color: #ffd700;
+        color: #0a0c12;
+        font-weight: bold;
+        padding: 1rem;
+        border-radius: 8px;
+        width: 100%;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: #b8860b;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Sección de historial
+.history-section {
+    margin-top: 3rem;
+    
+    .table-custom {
+        background-color: #14161f;
+        border-radius: 12px;
+        overflow: hidden;
+        
+        thead {
+            background-color: #ffd700;
+            
+            th {
+                color: #0a0c12;
+                font-weight: bold;
+                padding: 1rem;
+            }
+        }
+        
+        tbody {
+            tr {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                
+                &:hover {
+                    background-color: rgba(255, 215, 0, 0.1);
+                }
+                
+                td {
+                    padding: 1rem;
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+        }
+    }
+}

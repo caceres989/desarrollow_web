@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Fichas - Casino Online</title>
+    <link rel="stylesheet" href="../css/carga-fichas.css">
+</head>
+<body>
+    <div class="container-carga">
+        <div class="card-carga">
+            <h2>Cargar Fichas</h2>
+            <p class="subtitulo">Selecciona el monto que deseas cargar</p>
+
+            <!-- Opciones de montos predefinidos -->
+            <div class="montos-grid">
+                <div class="monto-card" data-monto="1000">
+                    <span class="cantidad">$1,000</span>
+                    <span class="fichas">+ 1,000 fichas</span>
+                </div>
+                <div class="monto-card" data-monto="5000">
+                    <span class="cantidad">$5,000</span>
+                    <span class="fichas">+ 5,000 fichas</span>
+                    <span class="bonus">Bonus 10%</span>
+                </div>
+                <div class="monto-card" data-monto="10000">
+                    <span class="cantidad">$10,000</span>
+                    <span class="fichas">+ 10,000 fichas</span>
+                    <span class="bonus">Bonus 15%</span>
+                </div>
+                <div class="monto-card" data-monto="25000">
+                    <span class="cantidad">$25,000</span>
+                    <span class="fichas">+ 25,000 fichas</span>
+                    <span class="bonus">Bonus 20%</span>
+                </div>
+                <div class="monto-card" data-monto="50000">
+                    <span class="cantidad">$50,000</span>
+                    <span class="fichas">+ 50,000 fichas</span>
+                    <span class="bonus">Bonus 25%</span>
+                </div>
+            </div>
+
+            <!-- Monto personalizado -->
+            <div class="monto-personalizado">
+                <label>Monto personalizado</label>
+                <div class="input-group">
+                    <span class="currency">$</span>
+                    <input type="number" id="montoPersonalizado" placeholder="Ingresa un monto">
+                </div>
+            </div>
+
+            <!-- Métodos de pago -->
+            <div class="metodos-pago">
+                <h3>Selecciona método de pago</h3>
+                <div class="metodos-grid">
+                    <div class="metodo-card active" data-metodo="mercadopago">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.10/mercadopago/logo__small.png" alt="Mercado Pago">
+                        <span>Mercado Pago</span>
+                    </div>
+                    <div class="metodo-card" data-metodo="qr">
+                        <i class="icon-qr">📱</i>
+                        <span>Pago con QR</span>
+                    </div>
+                    <div class="metodo-card" data-metodo="alias">
+                        <i class="icon-alias">🏦</i>
+                        <span>Transferencia / Alias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen y botón de pago -->
+            <div class="resumen-carga">
+                <div class="resumen-item">
+                    <span>Monto a pagar:</span>
+                    <strong id="montoMostrar">$0</strong>
+                </div>
+                <div class="resumen-item">
+                    <span>Fichas a recibir:</span>
+                    <strong id="fichasMostrar">0</strong>
+                </div>
+                <button id="btnPagar" class="btn-pagar" disabled>
+                    Continuar al pago
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal para mostrar QR y datos de transferencia -->
+        <div id="modalPago" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="contenidoPago"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/carga-fichas.js"></script>
+</body>
+</html>

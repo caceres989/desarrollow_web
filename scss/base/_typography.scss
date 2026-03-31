@@ -1,0 +1,59 @@
+// ============================================
+// TIPOGRAFÍA
+// ============================================
+
+.text-gold {
+    color: #ffd700;
+}
+
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.display-3 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .display-3 {
+        font-size: 2rem;
+    }
+}
+
+.h1 {
+    font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+    .h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.h2 {
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.h3 {
+    font-size: 1.75rem;
+}
+
+@media (max-width: 768px) {
+    .h3 {
+        font-size: 1.3rem;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

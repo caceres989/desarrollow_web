@@ -1,0 +1,30 @@
+// Mixin para media queries
+@mixin mobile {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 991.98px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+// Mixin para flex center
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mixin para transiciones
+@mixin transition($property: all, $duration: 0.3s, $ease: ease) {
+    transition: $property $duration $ease;
+}
